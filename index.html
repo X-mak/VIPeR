@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .author-info {
+            text-align: center;
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .author-name {
+            position: relative; 
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .author-name.star::before {
+            content: "*";
+            position: absolute;
+            left: -0.4em;
+            font-size: 0.8em; 
+        }
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .buttons a {
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .section h2 {
+            color: #555;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        .section p {
+            line-height: 1.6;
+            color: #333;
+        }
+        .section a {
+            color: #66B3FF; 
+            text-decoration: none; 
+        }
+        .section a:hover {
+            color: #007BFF; 
+            text-decoration: underline; 
+        }
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background-color: #fff;
+        }
+        .bibtex {
+            background-color: #f8f9fa; 
+            overflow-x: auto;
+            white-space: pre;
+            font-family: monospace; 
+            font-size: 0.9em; 
+            line-height: 1;
+            color: #333; 
+            border: 1px solid #ddd; 
+        }
+        .bibtex pre {
+            height: 60px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Continual Learning</h1>
+    <div class="author-info">
+        <a href="https://yuhangming.github.io/"><span class="author-name star">Yuhang Ming</span></a><sup>1</sup>&nbsp;
+        <span class="author-name star">Minyang Xu</span><sup>1</sup>
+        <a href="https://yangxingrui.com/">Xingrui Yang</a><sup>2</sup>
+        Weicai Ye<sup>3</sup>
+        Weihan Wang<sup>4</sup>
+        Yong Peng<sup>1</sup>
+        Weichen Dai<sup>1</sup>
+        Wanzeng Kong<sup>1</sup>
+        <br>
+        <span class="author-name star">equal contribution</span>
+        <br>
+        <sup>1</sup>Brain Machine Collaborative Intelligence of Zhejiang Province, Hangzhou Dianzi University, China</br>
+        <sup>2</sup>High-speed Aerodynamics Institute, CARDC, China</br>
+        <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University, China</br>
+        <sup>4</sup>Stevens Institute of Technology, Hoboken, NJ, USA
+    </div>
+
+    <div class="buttons">
+        <a href="https://arxiv.org/abs/2407.21416" target="_blank">ArXiv</a>
+        <a href="https://github.com/X-mak/VIPeR" target="_blank">Code</a>
+    </div>
+
+    <div class="image-container">
+        <img src="new_model_small.png" alt="论文相关图片">
+        <div class="image-caption">Overview of main components and data flow within our proposed VIPeR. </div>
+    </div>
+
+    <div class="section">
+        <h2>Abstract</h2>
+        <p>
+            Visual place recognition (VPR) is essential to many autonomous systems. 
+            Existing VPR methods demonstrate attractive performance at the cost of 
+            limited generalizability. When deployed in unseen environments, these methods exhibit significant performance drops. 
+            Targeting this issue, we present VIPeR, a novel approach for visual incremental place recognition with the ability to adapt to new environments while retaining the performance of previous ones. 
+            We first introduce an adaptive mining strategy that balances the performance within a single environment and the generalizability across multiple environments. Then, to prevent catastrophic forgetting in continual learning, we 
+            design a novel multi-stage memory bank for explicit rehearsal.
+            Additionally, we propose a probabilistic knowledge distillation to explicitly safeguard the previously learned knowledge. 
+            We evaluate our proposed VIPeR on three large-scale datasets---Oxford Robotcar, Nordland, and TartanAir. For comparison, we first set a baseline performance with naive finetuning. Then, several more recent continual learning methods are compared. Our VIPeR achieves better performance in almost all aspects with the biggest improvement of 13.85% in average performance.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Results</h2>
+        <p>Here we present the performance on the <a href="https://theairlab.org/tartanair-dataset/" target="_blank">TartanAir</a>, 
+            <a href="https://webdiis.unizar.es/~jmfacil/pr-nordland/" target="_blank">Nordland</a>, and
+            <a href="https://robotcar-dataset.robots.ox.ac.uk/" target="_blank">RobotCar</a> datasets.
+        </p>
+        <div class="image-container">
+            <img src="o_retrieval.png" alt="论文相关图片">
+            <div class="image-caption">Retrieval results</div>
+        </div>
+        <p>
+            We first set a baseline performance with naive finetuning
+            on both of the VPR methods we experimented with. In addi
+            tion, we also explore the performance of two generic weight
+            regularization methods in continual learning, EWC and
+            SI. For more recent methods, we compare our proposed
+            VIPeR to AirLoop and InCloud, which are specifi
+            cally designed for visual incremental place recognition. Since
+            AirLoop only supports the combination of VGG-19
+            and GeM, and InCloud takes in only LiDAR point
+            clouds, both are modified and re-trained, using their official
+            implementation, to get comparison results.
+        </p>
+        <div class="image-container">
+            <img src="eval_result.png" alt="论文相关图片">
+            <div class="image-caption">Performance of continual place recognition methods.</div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>BibTex</h2>
+        <div class="bibtex">
+            <pre>
+@article{ming2024viper,
+    title={VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Continual Learning},
+    author={Ming, Yuhang and Xu, Minyang and Yang, Xingrui and Ye, Weicai and Wang, Weihan and Peng, Yong and Dai, Weichen and Kong, Wanzeng},
+    journal={arXiv preprint arXiv:2407.21416},
+    year={2024}
+}
+            </pre>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Acknowledgement</h2>
+        <p>We thank the authors of <a href="https://github.com/sair-lab/AirLoop">AirLoop</a> for open sourcing their work.</p>
+    </div>
+</div>
+</body>
+</html>
