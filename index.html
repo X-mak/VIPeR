@@ -102,14 +102,20 @@
             padding: 0;
         }
         .author-info a{
-            font-family: Arial, sans-serif; /* 设置字体 */
-            color: #007BFF; /* 设置颜色 */
-            text-decoration: none; /* 去掉下划线 */
+            font-family: Arial, sans-serif; 
+            color: #007BFF;
+            text-decoration: none;
         }
 
         .author-info a:hover {
-            color: #0056b3; /* 设置鼠标悬停时的颜色 */
-            text-decoration: underline; /* 鼠标悬停时显示下划线 */
+            color: #0056b3; 
+            text-decoration: underline;
+        }
+        .institution-info{
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -128,10 +134,12 @@
         <br>
         <span class="author-name star">equal contribution</span>
         <br>
-        <sup>1</sup>Brain Machine Collaborative Intelligence of Zhejiang Province, Hangzhou Dianzi University, China</br>
-        <sup>2</sup>High-speed Aerodynamics Institute, CARDC, China</br>
-        <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University, China</br>
-        <sup>4</sup>Stevens Institute of Technology, Hoboken, NJ, USA
+        <div class="institution-info">
+            <sup>1</sup>School of Computer Science, Hangzhou Dianzi University</br>
+            <sup>2</sup>High-speed Aerodynamics Institute, CARDC, China</br>
+            <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University, China</br>
+            <sup>4</sup>Stevens Institute of Technology, Hoboken, NJ, USA
+        </div>
     </div>
 
     <div class="buttons">
@@ -190,12 +198,16 @@
         <h2>BibTex</h2>
         <div class="bibtex">
             <pre>
-@article{ming2024viper,
-    title={VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Continual Learning},
-    author={Ming, Yuhang and Xu, Minyang and Yang, Xingrui and Ye, Weicai and Wang, Weihan and Peng, Yong and Dai, Weichen and Kong, Wanzeng},
-    journal={arXiv preprint arXiv:2407.21416},
-    year={2024}
-}
+    @ARTICLE{10873856,
+        author={Ming, Yuhang and Xu, Minyang and Yang, Xingrui and Ye, Weicai and Wang, Weihan and Peng, Yong and Dai, Weichen and Kong, Wanzeng},
+        journal={IEEE Robotics and Automation Letters}, 
+        title={VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Continual Learning}, 
+        year={2025},
+        volume={},
+        number={},
+        pages={1-8},
+        keywords={Continuing education;Visualization;Training;Measurement;Atmospheric modeling;Adaptation models;Computational modeling;Data mining;Probabilistic logic;Image recognition;Localization;Recognition;Continual Learning},
+        doi={10.1109/LRA.2025.3539093}}
             </pre>
         </div>
     </div>
